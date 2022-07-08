@@ -39,8 +39,34 @@ const getBinaryTime = () => {
     }
   }
 };
+const changeColorBinaryIcon = () => {
+  let colorChange = document.getElementById('color-type').value;
+  for (let i = 0; i < 6; i++) {
+    for (let j = 0; j < 4; j++) {
+      if (
+        document
+          .getElementsByClassName('binary-unit')
+          [i].getElementsByClassName('binary-icon')
+          [j].matches('.light-on')
+      ) {
+        document
+          .getElementsByClassName('binary-unit')
+          [i].getElementsByClassName('binary-icon')[j].style[
+          'background-color'
+        ] = colorChange;
+      } else {
+        document
+          .getElementsByClassName('binary-unit')
+          [i].getElementsByClassName('binary-icon')[j].style[
+          'background-color'
+        ] = 'rgb(118, 111, 111)';
+      }
+    }
+  }
+};
 
 setInterval(() => {
   getBinaryTime();
   getDigitalTime();
+  changeColorBinaryIcon();
 }, 1000);

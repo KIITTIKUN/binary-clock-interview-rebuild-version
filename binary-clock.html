@@ -106,7 +106,13 @@
           <h2>Icon Type</h2>
           <input type="radio" id="dinosaur" name="icon-type" value="dinosaur" />
           <label for="circle">Dinosaur</label><br />
-          <input type="radio" id="circle" name="icon-type" value="pip" />
+          <input
+            type="radio"
+            id="circle"
+            name="icon-type"
+            value="circle"
+            checked
+          />
           <label for="circle">Circle</label><br />
           <input type="radio" id="hearth" name="icon-type" value="hearth" />
           <label for="circle">Hearth</label><br />
@@ -116,17 +122,16 @@
             name="icon-type"
             value="crescent-moon"
           />
-          <label for="circle">Cresent moon</label><br />
+          <label for="circle">Crescent moon</label><br />
         </form>
-        <form action="">
-          <h2>Color type</h2>
-          <input
-            type="color"
-            id="color-type"
-            name="color-type"
-            value="color-type"
-          />
-        </form>
+        <h2>Color type</h2>
+        <input
+          type="color"
+          id="color-type"
+          name="color-type"
+          value="#FF0000"
+          onclick="changeColorBinaryIcon()"
+        />
       </div>
     </div>
   </body>
