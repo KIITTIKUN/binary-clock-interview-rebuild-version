@@ -132,3 +132,7 @@ img {
     width: 20px;
     height: 20px;
 }
+
+.hiding {
+    background-color: #000000 !important;
+}

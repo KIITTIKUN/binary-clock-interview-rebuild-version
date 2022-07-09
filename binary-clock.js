@@ -55,13 +55,11 @@ const changeColorBinaryIcon = () => {
           'background-color'
         ] = colorChange;
       } else {
-        if (document.getElementById('display-unusable').checked === false) {
-          document
-            .getElementsByClassName('binary-unit')
-            [i].getElementsByClassName('binary-icon')[j].style[
-            'background-color'
-          ] = 'rgb(118, 111, 111)';
-        }
+        document
+          .getElementsByClassName('binary-unit')
+          [i].getElementsByClassName('binary-icon')[j].style[
+          'background-color'
+        ] = 'rgb(118, 111, 111)';
       }
     }
   }
@@ -189,20 +187,37 @@ const displayChange = () => {
   if (document.getElementById('display-unusable').checked === true) {
     document
       .getElementsByClassName('binary-unit')[0]
-      .getElementsByClassName('binary-icon')[0].style['background-color'] =
-      '#000000';
+      .getElementsByClassName('binary-icon')[0]
+      .classList.add('hiding');
     document
       .getElementsByClassName('binary-unit')[0]
-      .getElementsByClassName('binary-icon')[1].style['background-color'] =
-      '#000000';
+      .getElementsByClassName('binary-icon')[1]
+      .classList.add('hiding');
     document
       .getElementsByClassName('binary-unit')[2]
-      .getElementsByClassName('binary-icon')[0].style['background-color'] =
-      '#000000';
+      .getElementsByClassName('binary-icon')[0]
+      .classList.add('hiding');
     document
       .getElementsByClassName('binary-unit')[4]
-      .getElementsByClassName('binary-icon')[0].style['background-color'] =
-      '#000000';
+      .getElementsByClassName('binary-icon')[0]
+      .classList.add('hiding');
+  } else {
+    document
+      .getElementsByClassName('binary-unit')[0]
+      .getElementsByClassName('binary-icon')[0]
+      .classList.remove('hiding');
+    document
+      .getElementsByClassName('binary-unit')[0]
+      .getElementsByClassName('binary-icon')[1]
+      .classList.remove('hiding');
+    document
+      .getElementsByClassName('binary-unit')[2]
+      .getElementsByClassName('binary-icon')[0]
+      .classList.remove('hiding');
+    document
+      .getElementsByClassName('binary-unit')[4]
+      .getElementsByClassName('binary-icon')[0]
+      .classList.remove('hiding');
   }
 };
 
