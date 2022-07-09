@@ -55,11 +55,13 @@ const changeColorBinaryIcon = () => {
           'background-color'
         ] = colorChange;
       } else {
-        document
-          .getElementsByClassName('binary-unit')
-          [i].getElementsByClassName('binary-icon')[j].style[
-          'background-color'
-        ] = 'rgb(118, 111, 111)';
+        if (document.getElementById('display-unusable').checked === false) {
+          document
+            .getElementsByClassName('binary-unit')
+            [i].getElementsByClassName('binary-icon')[j].style[
+            'background-color'
+          ] = 'rgb(118, 111, 111)';
+        }
       }
     }
   }
@@ -90,6 +92,9 @@ const getDinosaurDom = () => {
         'https://svgsilh.com/svg/309638.svg';
     }
   }
+  if (document.getElementById('display-unusable').checked === true) {
+    displayChange();
+  }
 };
 const getCircleDom = () => {
   for (let i = 0; i < 4; i++) {
@@ -115,6 +120,9 @@ const getCircleDom = () => {
         [i].getElementsByClassName('binary-icon')
         [j].classList.add('circle');
     }
+  }
+  if (document.getElementById('display-unusable').checked === true) {
+    displayChange();
   }
 };
 
@@ -143,6 +151,9 @@ const getHearthDom = () => {
         'https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg';
     }
   }
+  if (document.getElementById('display-unusable').checked === true) {
+    displayChange();
+  }
 };
 const getCrescentDom = () => {
   for (let i = 0; i < 4; i++) {
@@ -169,7 +180,32 @@ const getCrescentDom = () => {
         'https://upload.wikimedia.org/wikipedia/commons/2/2a/Moon_symbol_crescent.svg';
     }
   }
+  if (document.getElementById('display-unusable').checked === true) {
+    displayChange();
+  }
 };
+
+const displayChange = () => {
+  if (document.getElementById('display-unusable').checked === true) {
+    document
+      .getElementsByClassName('binary-unit')[0]
+      .getElementsByClassName('binary-icon')[0].style['background-color'] =
+      '#000000';
+    document
+      .getElementsByClassName('binary-unit')[0]
+      .getElementsByClassName('binary-icon')[1].style['background-color'] =
+      '#000000';
+    document
+      .getElementsByClassName('binary-unit')[2]
+      .getElementsByClassName('binary-icon')[0].style['background-color'] =
+      '#000000';
+    document
+      .getElementsByClassName('binary-unit')[4]
+      .getElementsByClassName('binary-icon')[0].style['background-color'] =
+      '#000000';
+  }
+};
+
 setInterval(() => {
   getBinaryTime();
   getDigitalTime();
