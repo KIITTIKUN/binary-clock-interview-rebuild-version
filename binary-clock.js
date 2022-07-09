@@ -65,6 +65,111 @@ const changeColorBinaryIcon = () => {
   }
 };
 
+const getDinosaurDom = () => {
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 6; j++) {
+      document
+        .getElementsByClassName('binary-unit')
+        [j].getElementsByClassName('binary-icon')[0]
+        .remove();
+    }
+  }
+  for (let i = 0; i < 6; i++) {
+    for (let j = 0; j < 4; j++) {
+      document
+        .getElementsByClassName('binary-unit')
+        [i].appendChild(document.createElement('img'))
+        .classList.add('binary-icon');
+    }
+  }
+  for (let i = 0; i < 6; i++) {
+    for (let j = 0; j < 4; j++) {
+      document
+        .getElementsByClassName('binary-unit')
+        [i].getElementsByClassName('binary-icon')[j].src = src =
+        'https://svgsilh.com/svg/309638.svg';
+    }
+  }
+};
+const getCircleDom = () => {
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 6; j++) {
+      document
+        .getElementsByClassName('binary-unit')
+        [j].getElementsByClassName('binary-icon')[0]
+        .remove();
+    }
+  }
+  for (let i = 0; i < 6; i++) {
+    for (let j = 0; j < 4; j++) {
+      document
+        .getElementsByClassName('binary-unit')
+        [i].appendChild(document.createElement('div'))
+        .classList.add('binary-icon');
+    }
+  }
+  for (let i = 0; i < 6; i++) {
+    for (let j = 0; j < 4; j++) {
+      document
+        .getElementsByClassName('binary-unit')
+        [i].getElementsByClassName('binary-icon')
+        [j].classList.add('circle');
+    }
+  }
+};
+
+const getHearthDom = () => {
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 6; j++) {
+      document
+        .getElementsByClassName('binary-unit')
+        [j].getElementsByClassName('binary-icon')[0]
+        .remove();
+    }
+  }
+  for (let i = 0; i < 6; i++) {
+    for (let j = 0; j < 4; j++) {
+      document
+        .getElementsByClassName('binary-unit')
+        [i].appendChild(document.createElement('img'))
+        .classList.add('binary-icon');
+    }
+  }
+  for (let i = 0; i < 6; i++) {
+    for (let j = 0; j < 4; j++) {
+      document
+        .getElementsByClassName('binary-unit')
+        [i].getElementsByClassName('binary-icon')[j].src = src =
+        'https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg';
+    }
+  }
+};
+const getCrescentDom = () => {
+  for (let i = 0; i < 4; i++) {
+    for (let j = 0; j < 6; j++) {
+      document
+        .getElementsByClassName('binary-unit')
+        [j].getElementsByClassName('binary-icon')[0]
+        .remove();
+    }
+  }
+  for (let i = 0; i < 6; i++) {
+    for (let j = 0; j < 4; j++) {
+      document
+        .getElementsByClassName('binary-unit')
+        [i].appendChild(document.createElement('img'))
+        .classList.add('binary-icon');
+    }
+  }
+  for (let i = 0; i < 6; i++) {
+    for (let j = 0; j < 4; j++) {
+      document
+        .getElementsByClassName('binary-unit')
+        [i].getElementsByClassName('binary-icon')[j].src = src =
+        'https://upload.wikimedia.org/wikipedia/commons/2/2a/Moon_symbol_crescent.svg';
+    }
+  }
+};
 setInterval(() => {
   getBinaryTime();
   getDigitalTime();

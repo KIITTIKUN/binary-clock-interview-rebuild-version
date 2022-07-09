@@ -33,44 +33,44 @@
         <div id="binary-clock">
           <div class="binary-clock-unit">
             <div class="binary-unit">
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
             </div>
             <div class="binary-unit">
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
-            </div>
-          </div>
-          <div class="binary-clock-unit">
-            <div class="binary-unit">
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
-            </div>
-            <div class="binary-unit">
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
             </div>
           </div>
           <div class="binary-clock-unit">
             <div class="binary-unit">
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
             </div>
             <div class="binary-unit">
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
-              <div class="binary-icon"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+            </div>
+          </div>
+          <div class="binary-clock-unit">
+            <div class="binary-unit">
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+            </div>
+            <div class="binary-unit">
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
             </div>
           </div>
         </div>
@@ -104,7 +104,13 @@
       <div id="option-binary-clock">
         <form action="">
           <h2>Icon Type</h2>
-          <input type="radio" id="dinosaur" name="icon-type" value="dinosaur" />
+          <input
+            type="radio"
+            id="dinosaur"
+            name="icon-type"
+            value="dinosaur"
+            onclick="getDinosaurDom()"
+          />
           <label for="circle">Dinosaur</label><br />
           <input
             type="radio"
@@ -112,15 +118,23 @@
             name="icon-type"
             value="circle"
             checked
+            onclick="getCircleDom()"
           />
           <label for="circle">Circle</label><br />
-          <input type="radio" id="hearth" name="icon-type" value="hearth" />
+          <input
+            type="radio"
+            id="hearth"
+            name="icon-type"
+            value="hearth"
+            onclick="getHearthDom()"
+          />
           <label for="circle">Hearth</label><br />
           <input
             type="radio"
             id="crescent-moon"
             name="icon-type"
             value="crescent-moon"
+            onclick="getCrescentDom()"
           />
           <label for="circle">Crescent</label><br />
         </form>
