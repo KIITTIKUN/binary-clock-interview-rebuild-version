@@ -6,23 +6,22 @@ const getCurrentTime = () => {
   return `${hours}${minutes}${seconds}`;
 };
 
-const getDigitalTime = () => {
-  const digitalTime = getCurrentTime();
+const getDigitalTime = (digitalTime) => {
   for (let i = 0; i < digitalTime.length; i++) {
     const digitalIcon = document.getElementsByClassName('digital-icon')[i];
     digitalIcon.innerHTML = digitalTime[i];
   }
 };
 
-const convertTimeToBinary = () => {
-  const currentTime = getCurrentTime();
+const convertTimeToBinary = (currentTime) => {
+  getCurrentTime();
   return currentTime
     .split('')
     .map((digit) => parseInt(digit).toString(2).padStart(4, '0'));
 };
 
-const getBinaryTime = () => {
-  const binaryTimeArray = convertTimeToBinary();
+const getBinaryTime = (currentTime) => {
+  const binaryTimeArray = convertTimeToBinary(currentTime);
   for (let i = 0; i < binaryTimeArray.length; i++) {
     for (let j = 0; j < binaryTimeArray[i].length; j++) {
       if (binaryTimeArray[i][j] === '1') {
@@ -86,11 +85,11 @@ const getDinosaurDom = () => {
     for (let j = 0; j < 4; j++) {
       document
         .getElementsByClassName('binary-unit')
-        [i].getElementsByClassName('binary-icon')[j].src = src =
+        [i].getElementsByClassName('binary-icon')[j].src =
         'https://svgsilh.com/svg/309638.svg';
     }
   }
-  if (document.getElementById('display-unusable').checked === true) {
+  if (document.getElementById('display-unusable').checked) {
     displayChange();
   }
 };
@@ -145,7 +144,7 @@ const getHearthDom = () => {
     for (let j = 0; j < 4; j++) {
       document
         .getElementsByClassName('binary-unit')
-        [i].getElementsByClassName('binary-icon')[j].src = src =
+        [i].getElementsByClassName('binary-icon')[j].src =
         'https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg';
     }
   }
@@ -174,55 +173,40 @@ const getCrescentDom = () => {
     for (let j = 0; j < 4; j++) {
       document
         .getElementsByClassName('binary-unit')
-        [i].getElementsByClassName('binary-icon')[j].src = src =
+        [i].getElementsByClassName('binary-icon')[j].src =
         'https://upload.wikimedia.org/wikipedia/commons/2/2a/Moon_symbol_crescent.svg';
     }
   }
-  if (document.getElementById('display-unusable').checked === true) {
+  if (document.getElementById('display-unusable').checked) {
     displayChange();
   }
 };
 
 const displayChange = () => {
-  if (document.getElementById('display-unusable').checked === true) {
-    document
-      .getElementsByClassName('binary-unit')[0]
-      .getElementsByClassName('binary-icon')[0]
-      .classList.add('hiding');
-    document
-      .getElementsByClassName('binary-unit')[0]
-      .getElementsByClassName('binary-icon')[1]
-      .classList.add('hiding');
-    document
-      .getElementsByClassName('binary-unit')[2]
-      .getElementsByClassName('binary-icon')[0]
-      .classList.add('hiding');
-    document
-      .getElementsByClassName('binary-unit')[4]
-      .getElementsByClassName('binary-icon')[0]
-      .classList.add('hiding');
+  const hidingDomArr = [
+    [0, 0],
+    [0, 1],
+    [2, 0],
+    [4, 0],
+  ];
+  if (document.getElementById('display-unusable').checked) {
+    for (let i = 0; i < hidingDomArr.length; i++) {
+      document
+        .getElementsByClassName('binary-unit')
+        [hidingDomArr[i][0]].getElementsByClassName('binary-icon')
+        [hidingDomArr[i][1]].classList.add('hiding');
+    }
   } else {
-    document
-      .getElementsByClassName('binary-unit')[0]
-      .getElementsByClassName('binary-icon')[0]
-      .classList.remove('hiding');
-    document
-      .getElementsByClassName('binary-unit')[0]
-      .getElementsByClassName('binary-icon')[1]
-      .classList.remove('hiding');
-    document
-      .getElementsByClassName('binary-unit')[2]
-      .getElementsByClassName('binary-icon')[0]
-      .classList.remove('hiding');
-    document
-      .getElementsByClassName('binary-unit')[4]
-      .getElementsByClassName('binary-icon')[0]
-      .classList.remove('hiding');
+    for (let i = 0; i < hidingDomArr.length; i++) {
+      document
+        .getElementsByClassName('binary-unit')
+        [hidingDomArr[i][0]].getElementsByClassName('binary-icon')
+        [hidingDomArr[i][1]].classList.remove('hiding');
+    }
   }
 };
 
 setInterval(() => {
-  getBinaryTime();
-  getDigitalTime();
-  changeColorBinaryIcon();
+  getBinaryTime(getCurrentTime());
+  getDigitalTime(getCurrentTime());
 }, 1000);
