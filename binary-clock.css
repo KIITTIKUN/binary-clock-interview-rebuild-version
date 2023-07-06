@@ -1,0 +1,140 @@
+body {
+    background-color: #000000;
+    margin: 0px;
+    font-family: monospace;
+    display: flex;
+}
+
+nav {
+    width: 100%;
+    height: 100px;
+    border-style: none none solid none;
+    border-color: #FFFFFF;
+    border-width: 1px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    width: 350px;
+    height: 55px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#logo p {
+    font-size: 36px;
+    position: relative;
+    bottom: 30px;
+}
+
+.display-change {
+    width: 150px;
+    height: 45px;
+    color: #FFFFFF;
+    border-style: solid;
+    text-align: center;
+    margin: 0 20px 0 0;
+    border-radius: 10px;
+}
+
+#content {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#clock {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+#binary-clock {
+    width: 300px;
+    height: 150px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.binary-clock-unit {
+    width: 80px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+.binary-unit {
+    width: 30px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.binary-icon {
+    width: 20px;
+    height: 20px;
+    margin: 8px;
+    background-color: rgb(118, 111, 111);
+}
+
+#digital-clock {
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.digital-clock-unit {
+    width: 80px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.digital-unit {
+    width: 30px;
+    height: 30px;
+}
+
+.digital-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin: 8px;
+    background-color: white;
+    text-align: center;
+}
+
+#option-binary-clock {
+    width: 300px;
+    height: 250px;
+    border-color: #FF0000;
+    border-style: solid;
+    color: white;
+}
+
+.light-on {
+    background-color: #0000FF;
+    transform: scale(1.1);
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+img {
+    background-color: #FF0000;
+    width: 20px;
+    height: 20px;
+}
+
+.hiding {
+    display: none;
+}

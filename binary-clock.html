@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="binary-clock.css" rel="stylesheet" />
+    <link
+      href="'https://fonts.google.com/specimen/Black+Han+Sans?query=black"
+      rel="stylesheet"
+    />
+    <title>BINARY CLOCK</title>
+  </head>
+  <body>
+    <nav>
+      <div id="logo">
+        <p>BINARY CLOCK</p>
+      </div>
+      <div class="display-change">
+        <form id="get-display-change" action="">
+          <input
+            type="checkbox"
+            id="display-unusable"
+            name="display-unusable"
+            value="false"
+            onclick="displayChange()"
+          />
+          <label for="display-unusable">Display change</label>
+        </form>
+      </div>
+    </nav>
+    <div id="content">
+      <div id="clock">
+        <div id="binary-clock">
+          <div class="binary-clock-unit">
+            <div class="binary-unit">
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+            </div>
+            <div class="binary-unit">
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+            </div>
+          </div>
+          <div class="binary-clock-unit">
+            <div class="binary-unit">
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+            </div>
+            <div class="binary-unit">
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+            </div>
+          </div>
+          <div class="binary-clock-unit">
+            <div class="binary-unit">
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+            </div>
+            <div class="binary-unit">
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+              <div class="binary-icon circle"></div>
+            </div>
+          </div>
+        </div>
+        <div id="digital-clock">
+          <div class="digital-clock-unit">
+            <div class="digital-unit">
+              <div class="digital-icon"></div>
+            </div>
+            <div class="digital-unit">
+              <div class="digital-icon"></div>
+            </div>
+          </div>
+          <div class="digital-clock-unit">
+            <div class="digital-unit">
+              <div class="digital-icon"></div>
+            </div>
+            <div class="digital-unit">
+              <div class="digital-icon"></div>
+            </div>
+          </div>
+          <div class="digital-clock-unit">
+            <div class="digital-unit">
+              <div class="digital-icon"></div>
+            </div>
+            <div class="digital-unit">
+              <div class="digital-icon"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="option-binary-clock">
+        <form action="">
+          <h2>Icon Type</h2>
+          <input
+            type="radio"
+            id="dinosaur"
+            name="icon-type"
+            value="dinosaur"
+            onclick="getDinosaurDom()"
+          />
+          <label for="circle">Dinosaur</label><br />
+          <input
+            type="radio"
+            id="circle"
+            name="icon-type"
+            value="circle"
+            checked
+            onclick="getCircleDom()"
+          />
+          <label for="circle">Circle</label><br />
+          <input
+            type="radio"
+            id="hearth"
+            name="icon-type"
+            value="hearth"
+            onclick="getHearthDom()"
+          />
+          <label for="circle">Hearth</label><br />
+          <input
+            type="radio"
+            id="crescent-moon"
+            name="icon-type"
+            value="crescent-moon"
+            onclick="getCrescentDom()"
+          />
+          <label for="circle">Crescent</label><br />
+        </form>
+        <h2>Color type</h2>
+        <input
+          type="color"
+          id="color-type"
+          name="color-type"
+          value="#FF0000"
+          oninput="changeColorBinaryIcon()"
+        />
+      </div>
+    </div>
+  </body>
+  <script src="binary-clock.js"></script>
+</html>
